@@ -56,7 +56,7 @@ defmodule Phoenix.PubSub.Redis do
 
     opts = handle_url_opts(opts)
     opts = Keyword.merge(@defaults, opts)
-    redis_opts = Keyword.take(opts, [:host, :port, :password, :database, :ssl])
+    redis_opts = Keyword.take(opts, [:host, :port, :password, :database, :ssl, :socket_opts])
 
     pool_name   = Module.concat(server_name, Pool)
     namespace   = redis_namespace(server_name)
